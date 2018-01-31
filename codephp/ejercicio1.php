@@ -1,16 +1,18 @@
-
+<?php
+$title = "Tabla de multiplicacion";
+$numero = 8;
+?>
 <!DOCTYPE html>
 <html>
 
     <head>
      <meta charset="uft-8" />
-     <title>Page title</title>
+     <title><?php echo $title; ?></title>
     </head>
 
     <body>
     <?php
-    $numero = 8;
-  
+    
     echo "<table border=\"1\">";
  
     //la variable $i tiene valor 1, el echo ejecuta el Resultado
