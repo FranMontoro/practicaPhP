@@ -3,7 +3,7 @@
 
  <head>
       <meta charset="uft-8" />
-      <title>ejercicio 03</title>
+      <title>ejercicio 05-while</title>
      </head>
 
  <body>
@@ -31,16 +31,21 @@
      $temperaturas = array();
 
      //comienza el array temperatura
-     for ($i = 0; $i <  $numero_elementos; $i++) {
+     $i = 0;
+     while ($i <  $numero_elementos) {
         $temperaturas[$i] = rand(1,30);
+        //para evitar bucle infinito, ponemos:
+        $i++;
      }
      
 
      //calcular la suma y media
      $suma=0;
+     $i = 0;
 
-     for ($i = 0; $i <  $numero_elementos; $i++) {
+     while ($i <  $numero_elementos) {
          $suma = $suma + $temperaturas[$i];
+         $i++;
      }
      $media = $suma / $numero_elementos;
 
@@ -48,26 +53,31 @@
     
     //Calcular el Maximo
     $maximo = $temperaturas[0];
-    for ($i = 1; $i < $numero_elementos; $i++){
-    //empezamos en $i=1 para optimizar, no es necesario $i=0
-      if ($temperaturas[$i] > $maximo){
+    $i = 1;
+
+    while ($i <  $numero_elementos){
+      if ($numero_elementos[$i] > $maximo){
         $maximo = $temperaturas[$i];
+        
       }
-    } 
+      $i++;
+    }
 
     echo "<h4>Maximo: $maximo</h4>";
 
-    //Calcular el Minimo (copiamos el mismo que maximo, pero cambiamos la variable)
+    //Calcular el minimo
     $minimo = $temperaturas[0];
-    for ($i = 1; $i < $numero_elementos; $i++){
-    //ahora usamos el < (menor que) para realizar el calculo deseado  
-      if ($temperaturas[$i] < $minimo){
+    $i= 1;
+    while ($i <  $numero_elementos){
+    
+      if ($numero_elementos[$i] < $minimo){
         $minimo = $temperaturas[$i];
       }
-    } 
+      $i++;
+    }
 
     echo "<h4>Minimo: $minimo</h4>";
-
+    
     //echo "<pre>"; lo que hace es mostrar tal cual lo escribimos en el archivo .php
      echo "<pre>";
      print_r($temperaturas);
