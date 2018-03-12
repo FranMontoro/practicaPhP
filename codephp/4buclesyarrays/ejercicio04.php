@@ -3,7 +3,7 @@
 
  <head>
       <meta charset="uft-8" />
-      <title>ejercicio 03</title>
+      <title>ejercicio04-foreach</title>
      </head>
 
  <body>
@@ -48,26 +48,25 @@
     
     //Calcular el Maximo
     $maximo = $temperaturas[0];
-    for ($i = 1; $i < $numero_elementos; $i++){
-    //empezamos en $i=1 para optimizar, no es necesario $i=0
-      if ($temperaturas[$i] > $maximo){
-        $maximo = $temperaturas[$i];
+    foreach ($temperaturas as $valor)
+      if ($valor > $maximo){
+        $maximo = $valor;
       }
-    } 
+     
 
     echo "<h4>Maximo: $maximo</h4>";
 
-    //Calcular el Minimo (copiamos el mismo que maximo, pero cambiamos la variable)
+    
     $minimo = $temperaturas[0];
-    for ($i = 1; $i < $numero_elementos; $i++){
-    //ahora usamos el < (menor que) para realizar el calculo deseado  
-      if ($temperaturas[$i] < $minimo){
-        $minimo = $temperaturas[$i];
+    foreach($temperaturas as $valor)
+    
+      if ($valor < $minimo){
+        $minimo = $valor;
       }
-    } 
+    
 
     echo "<h4>Minimo: $minimo</h4>";
-
+    
     //echo "<pre>"; lo que hace es mostrar tal cual lo escribimos en el archivo .php
      echo "<pre>";
      print_r($temperaturas);
